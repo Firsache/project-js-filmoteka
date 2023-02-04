@@ -58,11 +58,11 @@ export const markupFilmCardHome = function (array) {
       return `  
     <li class="card-library__item" data-id="${id}">
     <div class="img__container">
-     <img class="card-library__photo" src="${posterPath}" alt=${sliceTitle(
+    <img class="card-library__photo" src="${posterPath}" alt=${sliceTitle(
         original_title
       )} width="395"/>
     </div>
-     
+    
       <div class="card-library__wrap">
         <h3 class="card-library__title">${sliceTitle(original_title)}</h3>
         <div class="card-library__info">
