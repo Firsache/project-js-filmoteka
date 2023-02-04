@@ -10,8 +10,12 @@ export let pagination = {};
 const container = document.querySelector('#pagination');
 
 export const onPaginationBtnClick = e => {
-  console.log(e.page);
   filmApi.page = e.page;
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+
   if (filmApi.query !== null) {
     filmApi.fetchFilmsByQuery().then(response => {
       console.log('response', response.data.results);
@@ -31,8 +35,6 @@ export const onPaginationBtnClick = e => {
 
 filmApi.page = 1;
 filmApi.fetchTrendingFilms().then(response => {
-  // console.log('response', response.data.results);
-  // console.log(refs);
   refs.galleryCardLibraryEl = document.querySelector('.js-card-library');
   refs.galleryCardLibraryEl.innerHTML = markupFilmCardHome(
     response.data.results
@@ -51,7 +53,6 @@ filmApi.fetchTrendingFilms().then(response => {
       currentPage:
         '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
       moveButton: ({ type }) => {
-        // console.log(type);
 
         if (type === 'first') {
           return (
@@ -90,7 +91,6 @@ filmApi.fetchTrendingFilms().then(response => {
         }
       },
       disabledMoveButton: ({ type }) => {
-        // console.log(type);
 
         if (type === 'first') {
           return (
@@ -156,7 +156,7 @@ filmApi.fetchTrendingFilms().then(response => {
         '</a>',
     },
   };
-  // console.log(container);
+  
   pagination = new Pagination(container, options);
 
   console.log(pagination);

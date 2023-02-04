@@ -20,4 +20,8 @@ let trans = () => {
     }, 1000)
 }
 
+if (localStorage.getItem('data-theme') === 'dark') {
+    console.log('we are here');
+    checkbox.checked = !checkbox.checked;
+}
 document.documentElement.setAttribute('data-theme', localStorage.getItem('data-theme'));

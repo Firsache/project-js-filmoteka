@@ -227,6 +227,14 @@
 }
 
 .img__container {
-  width: 395px;
-  height: 574px;
+  // width: 280px;
+  // height: 438px;
+  @media screen and (min-width: 768px) {
+    width: 336px;
+    height: 495px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 395px;
+    height: 574px;
+  }
 }
