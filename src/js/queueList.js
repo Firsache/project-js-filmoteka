@@ -3,7 +3,7 @@ import { refs } from './refs.js';
 import popcornImgPath from '../images/popcorn.svg-min.png';
 
 
-if (window.location.pathname === '/library.html') {
+if (window.location.pathname === '/project-js-filmoteka/library.html') {
   refs.btnHeaderQueueEl.addEventListener('click', onBtnQueueClick);
 }
 

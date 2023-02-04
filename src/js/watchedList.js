@@ -5,7 +5,7 @@ import popcornImgPath from '../images/popcorn.svg-min.png';
 // let watchedSavedList = localStorage.getItem('watchedList');
 // const watchedParsedList = JSON.parse(watchedSavedList) || [];
 
-if (window.location.pathname === '/library.html') {
+if (window.location.pathname === '/project-js-filmoteka/library.html') {
   if (!refs.btnHeaderWatchedEl.classList.contains("btn-active")) {
      refs.btnHeaderWatchedEl.classList.replace("btn-header","btn-active");
   }

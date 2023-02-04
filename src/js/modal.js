@@ -57,7 +57,7 @@ function onModalCloseClick() {
   backdropEl.removeEventListener('click', onBackdropElClick);
   window.removeEventListener('keydown', onEscBtnClick);
 
-  if (window.location.pathname === '/library.html') {
+  if (window.location.pathname === '/project-js-filmoteka/library.html') {
     Notiflix.Loading.pulse({
       backgroundColor: 'rgba(0,0,0,8 )',
       svgColor: '#ff6b08',
