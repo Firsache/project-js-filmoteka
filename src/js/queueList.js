@@ -18,9 +18,6 @@ function onBtnQueueClick() {
 }
 
 export function rerenderQueueLib() {
-  // if (!refs.btnHeaderWatchedEl.classList.contains("btn-active")) {
-  //   refs.btnHeaderWatchedEl.classList.replace("btn-header", "btn-active");
-  // }
   let queueSavedList = localStorage.getItem('queueList');
   const queueParsedList = JSON.parse(queueSavedList) || [];
 
