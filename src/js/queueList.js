@@ -8,16 +8,15 @@ if (window.location.pathname === '/project-js-filmoteka/library.html') {
 }
 
 function onBtnQueueClick() {
-  // refs.btnHeaderWatchedEl.classList.remove("btn-active");
-  // refs.btnHeaderWatchedEl.classList.add("btn-header");
   if (refs.btnHeaderWatchedEl.classList.contains("btn-active")) {
     refs.btnHeaderWatchedEl.classList.replace("btn-active","btn-header");
   }
-  refs.btnHeaderQueueEl.classList.replace("btn-header","btn-active");  
+  refs.btnHeaderQueueEl.classList.replace("btn-header", "btn-active");
   rerenderQueueLib();
 }
 
 export function rerenderQueueLib() {
+  console.log('we are in render q');
   let queueSavedList = localStorage.getItem('queueList');
   const queueParsedList = JSON.parse(queueSavedList) || [];
 
@@ -27,6 +26,7 @@ export function rerenderQueueLib() {
   }
   refs.myLibraryGalleryEl.innerHTML = markupFilmCardLibrary(queueParsedList);
 }
+
 function renderDefaultQueueNotification() {
   return `<img src="${popcornImgPath}" alt="popcorn picture" width="150">
   <p class="notification-library">You haven't added any films to queue...</p>`;

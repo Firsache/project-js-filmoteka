@@ -15,11 +15,14 @@ if (window.location.pathname === '/project-js-filmoteka/library.html') {
 function onBtnHeaderWatchedClick() {
   if (refs.btnHeaderQueueEl.classList.contains("btn-active")) {
     refs.btnHeaderQueueEl.classList.replace("btn-active","btn-header");
-  }  
+  }
+  refs.btnHeaderWatchedEl.classList.replace("btn-header", "btn-active");
+  
   rerenderWatchedLib();
 }
 
 export function rerenderWatchedLib() {
+  console.log('we are in render w');
   let watchedSavedList = localStorage.getItem('watchedList');
   const watchedParsedList = JSON.parse(watchedSavedList) || [];
 
