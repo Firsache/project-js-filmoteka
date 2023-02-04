@@ -34,6 +34,6 @@ export function rerenderWatchedLib() {
 }
 
 function renderDefaultWatchedNotification() {
-  return `<img src="${popcornImgPath}" alt="popcorn picture" width="150">
-  <p class="notification-library">You haven't added any films to watched...</p>`;
+  return `<div class="popcorn__picture"><img src="${popcornImgPath}" alt="popcorn picture" width="150">
+  <p class="notification-library">You haven't added any films to watched...</p></div>`;
 }

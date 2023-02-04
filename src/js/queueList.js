@@ -27,6 +27,6 @@ export function rerenderQueueLib() {
 }
 
 function renderDefaultQueueNotification() {
-  return `<img src="${popcornImgPath}" alt="popcorn picture" width="150">
-  <p class="notification-library">You haven't added any films to queue...</p>`;
+  return `<div class="popcorn__picture"><img src="${popcornImgPath}" alt="popcorn picture" width="150">
+  <p class="notification-library">You haven't added any films to queue...</p></div>`;
 }
