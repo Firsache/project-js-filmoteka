@@ -16,7 +16,6 @@ function onBtnQueueClick() {
 }
 
 export function rerenderQueueLib() {
-  console.log('we are in render q');
   let queueSavedList = localStorage.getItem('queueList');
   const queueParsedList = JSON.parse(queueSavedList) || [];
 

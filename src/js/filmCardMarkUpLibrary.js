@@ -45,8 +45,10 @@ export const markupFilmCardLibrary = function (array) {
 
       return `  
     <li class="card-library__item" data-id="${id}">
-      <img class="card-library__photo" src="https://image.tmdb.org/t/p/original/${poster_path}" alt=${original_title} width="395"/>
-      <div class="card-library__wrap">
+      <div class="img__container">
+        <img class="card-library__photo" src="https://image.tmdb.org/t/p/original/${poster_path}" alt=${original_title} width="395"/>
+      </div>
+        <div class="card-library__wrap">
         <h3 class="card-library__title">${original_title}</h3>
         <div class="card-library__info">
           <p class="card-library__text">
