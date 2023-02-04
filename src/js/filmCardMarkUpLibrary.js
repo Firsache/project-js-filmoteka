@@ -23,7 +23,7 @@ export const markupFilmCardLibrary = function (array) {
 
       let arrGenres = getGenr(array);
       // console.log(arrGenres);
-      for (i = 0; i < arrGenres.length; i++){
+      for (let i = 0; i < arrGenres.length; i++){
         // console.log(arrGenres[i]);
         genreStr = prepareObject(arrGenres[i]);
       }
