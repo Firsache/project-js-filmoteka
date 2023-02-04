@@ -20,11 +20,9 @@ export const markupFilmCardLibrary = function (array) {
       } = film;
 
       let genreStr = null;
-
       let arrGenres = getGenr(array);
-      // console.log(arrGenres);
+      
       for (let i = 0; i < arrGenres.length; i++){
-        // console.log(arrGenres[i]);
         genreStr = prepareObject(arrGenres[i]);
       }
 
@@ -39,7 +37,7 @@ export const markupFilmCardLibrary = function (array) {
         }
         return filmGenres;
       }
-      console.log(array.length);
+      
       let line = "|";
       if (genreStr.length === 0){
         line = "";
