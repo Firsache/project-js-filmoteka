@@ -4,20 +4,25 @@ import popcornImgPath from '../images/popcorn.svg-min.png';
 
 
 if (window.location.pathname === '/project-js-filmoteka/library.html') {
-  // refs.btnHeaderWatchedEl.classList.add("btn-active");
   if (!refs.btnHeaderWatchedEl.classList.contains("btn-active")) {
     refs.btnHeaderWatchedEl.classList.replace("btn-header","btn-active");
   }
   refs.btnHeaderWatchedEl.addEventListener('click', onBtnHeaderWatchedClick);  
   rerenderWatchedLib();
 }
+// for VSCode path
+// if (window.location.pathname === '/library.html') {
+//   if (!refs.btnHeaderWatchedEl.classList.contains("btn-active")) {
+//     refs.btnHeaderWatchedEl.classList.replace("btn-header","btn-active");
+//   }
+//   refs.btnHeaderWatchedEl.addEventListener('click', onBtnHeaderWatchedClick);  
+//   rerenderWatchedLib();
+// }
 
 function onBtnHeaderWatchedClick() {
   if (refs.btnHeaderQueueEl.classList.contains("btn-active")) {
     refs.btnHeaderQueueEl.classList.replace("btn-active","btn-header");
   }
-  // refs.btnHeaderWatchedEl.classList.replace("btn-header", "btn-active");
-  
   rerenderWatchedLib();
 }
 

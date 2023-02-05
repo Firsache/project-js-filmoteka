@@ -8,7 +8,6 @@ import { pagination, onPaginationBtnClick } from './pagination.js';
 import popcornImgPath from '../images/popcorn.svg-min.png';
 
 const headerFormEl = document.querySelector('.header__form');
-// console.log('look', headerFormEl);
 const headerInputEl = document.querySelector('.header__input');
 const headerFormBtn = document.querySelector('.btn_search');
 const headerWarningMessage = document.querySelector('.header__warning');
@@ -69,8 +68,9 @@ async function onSearchClick(event) {
     .then(data => {
       if (data.total_results === 0) {
         Notiflix.Loading.remove(300);
+        pagination.reset(data.total_results);
+
         searchFieldMessage.textContent = '';
-        // refs.galleryCardLibraryEl.innerHTML = '';
         refs.galleryCardLibraryEl.innerHTML = renderDefaultPhoto();
         headerWarningMessage.textContent = `Search result not successful. Enter the correct movie name`;
         return;
@@ -83,15 +83,18 @@ async function onSearchClick(event) {
         pagination.off('afterMove', onPaginationBtnClick);
 
         pagination.on('afterMove', e => {
-          console.log(e.page);
+          
           filmApi.page = e.page;
+          window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+          });
 
           filmApi.fetchFilmsByQuery().then(data => {
-            // console.log('response', response.data.results);
+            
             refs.galleryCardLibraryEl.innerHTML = markupFilmCardHome(
               data.results
             );
-            //pagination.setTotalItems(response.data.total_results);
           });
         });
       }

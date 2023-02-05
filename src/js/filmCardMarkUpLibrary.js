@@ -38,6 +38,15 @@ export const markupFilmCardLibrary = function (array) {
         return filmGenres;
       }
       
+      function sliceTitle(title) {
+        let titleShow = '';
+        if (original_title.length < 25) {
+          titleShow = original_title;
+        } else {
+          titleShow = original_title.slice(0, 25) + '...';
+        }
+        return titleShow;
+      }
       let line = "|";
       if (genreStr.length === 0){
         line = "";
@@ -49,7 +58,9 @@ export const markupFilmCardLibrary = function (array) {
         <img class="card-library__photo" src="https://image.tmdb.org/t/p/original/${poster_path}" alt=${original_title} width="395"/>
       </div>
         <div class="card-library__wrap">
-        <h3 class="card-library__title">${original_title}</h3>
+        <h3 class="card-library__title">$${sliceTitle(
+        original_title
+      )}</h3>
         <div class="card-library__info">
           <p class="card-library__text">
             ${genreStr} <span class="card-library__line">${line}</span> <span class="card-library__year">${release_date.slice(

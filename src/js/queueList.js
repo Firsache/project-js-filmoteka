@@ -7,6 +7,11 @@ if (window.location.pathname === '/project-js-filmoteka/library.html') {
   refs.btnHeaderQueueEl.addEventListener('click', onBtnQueueClick);
 }
 
+// for VSCode path
+// if (window.location.pathname === '/library.html') {
+//   refs.btnHeaderQueueEl.addEventListener('click', onBtnQueueClick);
+// }
+
 function onBtnQueueClick() {
   if (refs.btnHeaderWatchedEl.classList.contains("btn-active")) {
     refs.btnHeaderWatchedEl.classList.replace("btn-active","btn-header");

@@ -94,7 +94,6 @@ async function onModalOpenClick(event) {
       svgColor: '#ff6b08',
     });
 
-    // &&&&&&&&&&&?
     const { data } = await filmAPI.fetchFilmById(FilmID);
     renderFilmCard(data);
     localStorage.setItem('dataFilm', JSON.stringify(data));
@@ -244,20 +243,8 @@ function renderFilmCard(data) {
 
   const filmID = data.id;
   const isWatched = watchedParsedList.find(({ id }) => id === filmID);
-
   watchedModalBtnEl.textContent = !isWatched ? 'Add to watched' : 'Remove from watched';
-  // if (!isWatched) {
-  //   watchedModalBtnEl.textContent = 'Add to watched';
-  // } else {
-  //   watchedModalBtnEl.textContent = 'Remove from watched';
-  // }
 
   const isQueue = queueParsedList.find(({ id }) => id === filmID);
-
   queueModalBtnEl.textContent = !isQueue ? 'Add to queue' : 'Remove from queue';
-  // if (!isQueue) {
-  //   queueModalBtnEl.textContent = 'Add to queue';
-  // } else {
-  //   queueModalBtnEl.textContent = 'Remove from queue';
-  // }
 }
