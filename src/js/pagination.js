@@ -18,14 +18,14 @@ export const onPaginationBtnClick = e => {
 
   if (filmApi.query !== null) {
     filmApi.fetchFilmsByQuery().then(response => {
-      console.log('response', response.data.results);
+      // console.log('response', response.data.results);
       refs.galleryCardLibraryEl.innerHTML = markupFilmCardHome(
         response.data.results
       );
     });
   }
   filmApi.fetchTrendingFilms().then(response => {
-    console.log('response', response.data.results);
+    // console.log('response', response.data.results);
     refs.galleryCardLibraryEl.innerHTML = markupFilmCardHome(
       response.data.results
     );
@@ -159,7 +159,7 @@ filmApi.fetchTrendingFilms().then(response => {
   
   pagination = new Pagination(container, options);
 
-  console.log(pagination);
+  // console.log(pagination);
 
   pagination.on('afterMove', onPaginationBtnClick);
 

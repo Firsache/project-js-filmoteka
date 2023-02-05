@@ -19,7 +19,7 @@ const filmApi = new FilmAPI();
 headerFormEl.addEventListener('submit', onSearchClick);
 
 function renderDefaultPhoto() {
-  return `<img src="${popcornImgPath}" alt="popcorn picture" width="150">`;
+  return `<img class="popcorn__picture__search" src="${popcornImgPath}" alt="popcorn picture" width="150">`;
 }
 
 async function onSearchClick(event) {
