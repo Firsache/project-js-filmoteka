@@ -2,7 +2,6 @@ import { markupFilmCardLibrary } from './filmCardMarkUpLibrary';
 import { refs } from './refs.js';
 import popcornImgPath from '../images/popcorn.svg-min.png';
 
-
 if (window.location.pathname === '/project-js-filmoteka/library.html') {
   refs.btnHeaderQueueEl.addEventListener('click', onBtnQueueClick);
 }
@@ -13,10 +12,10 @@ if (window.location.pathname === '/project-js-filmoteka/library.html') {
 // }
 
 function onBtnQueueClick() {
-  if (refs.btnHeaderWatchedEl.classList.contains("btn-active")) {
-    refs.btnHeaderWatchedEl.classList.replace("btn-active","btn-header");
+  if (refs.btnHeaderWatchedEl.classList.contains('btn-active')) {
+    refs.btnHeaderWatchedEl.classList.replace('btn-active', 'btn-header');
   }
-  refs.btnHeaderQueueEl.classList.replace("btn-header", "btn-active");
+  refs.btnHeaderQueueEl.classList.replace('btn-header', 'btn-active');
   rerenderQueueLib();
 }
 
