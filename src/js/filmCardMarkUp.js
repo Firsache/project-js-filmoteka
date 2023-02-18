@@ -8,14 +8,13 @@ export const markupFilmCard = function (array) {
         genres = [],
         release_date,
         vote_average,
-        backdrop_path,
       } = film;
-      // console.log('film', film);
-      let line = "|";
-      if (genres.length === 0){
-        line = "";
+
+      let line = '|';
+      if (genres.length === 0) {
+        line = '';
       }
-      
+
       return `  
     <li class="card-library__item" data-id="${id}" >
       <img class="card-library__photo" src="https://image.tmdb.org/t/p/original/${poster_path}" alt="${original_title}" width="395"/>
