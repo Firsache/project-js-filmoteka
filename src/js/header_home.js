@@ -8,8 +8,6 @@ import { pagination, onPaginationBtnClick } from './pagination.js';
 import popcornImgPath from '../images/popcorn.svg-min.png';
 
 const headerFormEl = document.querySelector('.header__form');
-const headerInputEl = document.querySelector('.header__input');
-const headerFormBtn = document.querySelector('.btn_search');
 const headerWarningMessage = document.querySelector('.header__warning');
 const searchFieldMessage = document.querySelector('.js_search_results');
 
@@ -40,29 +38,6 @@ async function onSearchClick(event) {
     svgColor: '#ff6b08',
   });
 
-  //   filmApi
-  //     .fetchFilmsByQuery()
-  //     .then(data => {
-  //       if (data.total_results === 0) {
-  //         Notiflix.Loading.remove(300);
-  //         searchFieldMessage.textContent = '';
-  //         refs.galleryCardLibraryEl.innerHTML = '';
-  //         headerWarningMessage.textContent = `Search result not successful. Enter the correct movie name and `;
-  //         return;
-  //       } else {
-  //         Notiflix.Loading.remove(2500);
-
-  //         refs.galleryCardLibraryEl.innerHTML = markupFilmCardHome(data.results);
-  //       }
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //     });
-  //   event.currentTarget.elements.searchQuery.value = '';
-  //   searchFieldMessage.textContent = '';
-  //   headerWarningMessage.textContent = '';
-  // }
-
   filmApi
     .fetchFilmsByQuery()
     .then(data => {
@@ -83,15 +58,13 @@ async function onSearchClick(event) {
         pagination.off('afterMove', onPaginationBtnClick);
 
         pagination.on('afterMove', e => {
-          
           filmApi.page = e.page;
           window.scrollTo({
-          top: 0,
-          behavior: 'smooth',
+            top: 0,
+            behavior: 'smooth',
           });
 
           filmApi.fetchFilmsByQuery().then(data => {
-            
             refs.galleryCardLibraryEl.innerHTML = markupFilmCardHome(
               data.results
             );
