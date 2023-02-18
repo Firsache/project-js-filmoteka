@@ -9,11 +9,8 @@ import { onQueueModalBtnClick } from './local_storage';
 import { watchedParsedList } from './local_storage';
 import { queueParsedList } from './local_storage';
 import { refs } from './refs.js';
-
-// import { numberConverter } from './prepare-number';
-// import * as basicLightbox from 'basiclightbox';
-// import 'basiclightbox/dist/basicLightbox.min.css'
 import defaultPhoto from '../images/default-photo.jpeg';
+
 const modalOpenEl = document.querySelector('[data-modal-open]');
 const modalCloseEl = document.querySelector('[data-modal-close]');
 const modalEl = document.querySelector('[data-modal]');
